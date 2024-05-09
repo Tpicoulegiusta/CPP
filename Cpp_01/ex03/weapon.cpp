@@ -6,26 +6,25 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:08:58 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/08 16:55:34 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:15:11 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 #include "weapon.hpp"
 
-Weapon::Weapon()
+Weapon::Weapon(std::string arme)
 {
-    this-> _type = "";
+    this->_type = arme;
 }
 
 Weapon::~Weapon()
 {
 
 }
-std::string const Weapon::getType()
+std::string const &Weapon::getType() const
 {
-    std::string &_scnd_type = this->_type;
-    return(_scnd_type);
+    return(this->_type);
 }
 
 void Weapon::setType(std::string str)
