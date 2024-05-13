@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:06:56 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/10 17:15:38 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/05/13 14:05:59 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,16 @@ int main(int argc, char **argv)
     std::string line;
     while(getline(fichier, line))
     {
-        size_t search = line.find(s1);
-        while (search < line.length())
+        size_t pos = 0; // Initialise le suivi de position
+
+        while ((pos = line.find(s1, pos)) != std::string::npos) // Recherche la prochaine occurrence de s1 à partir de la position courante
         {
-            line.erase(search, s1.length());
-            line.insert(search, s2);
-            search += s2.length();
+            line.erase(pos, s1.length()); // Supprime s1
+            line.insert(pos, s2); // Insère s2 à la même position
+            pos += s2.length(); // Met à jour la position pour la prochaine recherche
         }
         Replaced_file << line << std::endl;
     }
     return 0;
 }
+
