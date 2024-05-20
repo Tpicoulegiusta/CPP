@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 14:14:33 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/20 16:34:06 by tpicoule         ###   ########.fr       */
+/*   Created: 2024/05/20 14:49:08 by tpicoule          #+#    #+#             */
+/*   Updated: 2024/05/20 16:29:08 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL
-# define ANIMAL
-#include <string>
-#include <iostream>
+#ifndef CAT
+# define CAT
+#include "Animal.hpp"
 
-class Animal
+class Cat : public Animal
 {
-protected:
-    std::string _type;
+private:
+
 public:
-    Animal();
-    virtual ~Animal();
-    Animal(std::string _t_name);
-    Animal &operator=(Animal const &rhs);
-    Animal(Animal const &cpy);
-    virtual void makeSound() const;
-    std::string getType() const;
+    Cat();
+    ~Cat();
+    Cat(std::string _t_name);
+    Cat &operator=(Cat const &rhs);
+    Cat(Cat const &cpy);
+    void makeSound() const;
 };
+
+
+
 
 #endif
