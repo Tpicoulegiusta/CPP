@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 14:10:54 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/29 13:39:01 by tpicoule         ###   ########.fr       */
+/*   Created: 2024/05/23 15:07:18 by tpicoule          #+#    #+#             */
+/*   Updated: 2024/05/28 15:06:42 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL
-# define HARL
-#include <string>
-#include <iostream>
+#include  "Bureaucrat.hpp"
 
-
-
-class Harl
+int main()
 {
-private:
-    void debug(void);
-    void info(void);
-    void warning(void);
-    void error(void);
-public:
-    Harl();
-    ~Harl();
-    void complain(std::string level);
-};
 
-
-
-
-
-#endif
+    return (0);
+}

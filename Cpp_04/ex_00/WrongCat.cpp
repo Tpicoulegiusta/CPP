@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:43:38 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/20 17:10:51 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/04 12:05:05 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,5 @@ WrongCat &WrongCat::operator=(WrongCat const &rhs)
 
 void WrongCat::makeSound() const
 {
-	std::cout << "WRRRRROOONNNNG" << std::endl;
+	std::cout << "WRRRRROOONNNNG MIAWWW" << std::endl;
 }
-
-
-

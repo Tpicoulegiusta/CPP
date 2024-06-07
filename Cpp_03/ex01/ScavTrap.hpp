@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 14:23:50 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/20 13:58:19 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/03 15:08:13 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 class ScavTrap : public ClapTrap
 {
-
 public:
     ScavTrap();
     ~ScavTrap();

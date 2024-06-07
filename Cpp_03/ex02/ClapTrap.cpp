@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 17:54:04 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/17 16:36:59 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/03 15:12:57 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ ClapTrap::ClapTrap()
 {
     std::cout << "Default Constructor called" << std::endl;
 	this->_Name = "Ivan";
-    this->_Hit_points = 10;
-    this->_Energy_points = 10;
-    this->_Attack_damage = 0; 
+    this->_Hit_points = 100;
+    this->_Energy_points = 100;
+    this->_Attack_damage = 30; 
 }
 
 ClapTrap::~ClapTrap()

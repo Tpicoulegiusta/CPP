@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:47:48 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/07 18:31:02 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/05/23 14:30:20 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,18 @@ int main()
 
             for (int i = 0; i < Repertory.ctc_nbr(); i++)
             {
-                std::cout << std::setw(10) << i << "|" << std::setw(10) << Repertory.recup_user()[i].access_f().substr(0, 10) << "|";
-                std::cout << std::setw(10) << Repertory.recup_user()[i].access_l().substr(0, 10) << "|";
-                std::cout << std::setw(10) << Repertory.recup_user()[i].access_n().substr(0, 10) << "|";
+                if (Repertory.recup_user()[i].access_f().length() >= 10)
+                    std::cout << std::setw(10) << i << "|" << std::setw(10) << Repertory.recup_user()[i].access_f().substr(0, 9) + "." << "|";
+                else
+                    std::cout << std::setw(10) << i << "|" << std::setw(10) << Repertory.recup_user()[i].access_f().substr(0, 10) << "|";
+				if (Repertory.recup_user()[i].access_l().length() >= 10)            
+                	std::cout << std::setw(10) << Repertory.recup_user()[i].access_l().substr(0, 9) + "."<< "|";
+				else
+                	std::cout << std::setw(10) << Repertory.recup_user()[i].access_l().substr(0, 10)<< "|";
+                if (Repertory.recup_user()[i].access_n().length() >= 10)
+					std::cout << std::setw(10) << Repertory.recup_user()[i].access_n().substr(0, 9) + "."<< "|";
+				else
+					std::cout << std::setw(10) << Repertory.recup_user()[i].access_n().substr(0, 10) << "|";
                 std::cout << std::endl;
             }
             int i;

@@ -6,13 +6,13 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:08:56 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/09 17:15:47 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/05/29 13:18:02 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 #include "HumanB.hpp"
-#include "weapon.hpp"
+#include "Weapon.hpp"
 
 int main ()
 {

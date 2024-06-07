@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 14:34:03 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/07 15:06:24 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/05/29 12:07:32 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void    Zombie::announce()
 
 Zombie::~Zombie()
 {
-
+    std::cout << this->_name << ": destructor called" << std::endl;
 }
 
 void Zombie::change_name(std::string name)
