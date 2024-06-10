@@ -1,12 +1,13 @@
 SRC = main.cpp \
-	  Bureaucrat.cpp
+	  Bureaucrat.cpp \
+	  Form.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 RM = rm -f
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = Bureaucrat
+NAME = Form
 
 all: $(NAME)
 
