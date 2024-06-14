@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 12:19:01 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/06/11 18:20:53 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/14 14:52:26 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 #include <exception>
+#include <fstream>
 
 class Bureaucrat;
 class PresidentialPardonForm;
@@ -30,7 +31,7 @@ protected:
 public:
     AForm();
     AForm(std::string name, int grade_sign, int grade_exec);
-    ~AForm();
+    virtual ~AForm();
     AForm &operator=(AForm const &rhs);
     std::string const getName() const;
     int getGrade_sign() const;
