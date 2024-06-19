@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 15:07:24 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/06/10 16:46:56 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/18 13:56:53 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,14 @@ void Bureaucrat::in_grade()
 {
     this->_grade--;
     if (this->_grade < 1)
-        throw (Bureaucrat::GradeTooLowException());
+        throw (Bureaucrat::GradeTooHighException());
 }
 
 void Bureaucrat::dec_grade()
 {
     this->_grade++;
     if (this->_grade > 150)
-        throw (Bureaucrat::GradeTooHighException());
+        throw (Bureaucrat::GradeTooLowException());
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& rhs)

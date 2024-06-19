@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 15:07:24 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/06/10 16:58:14 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/18 14:05:37 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,14 @@ void Bureaucrat::in_grade()
 {
     this->_grade--;
     if (this->_grade < 1)
-        throw (Bureaucrat::GradeTooLowException());
+        throw (Bureaucrat::GradeTooHighException());
 }
 
 void Bureaucrat::dec_grade()
 {
     this->_grade++;
     if (this->_grade > 150)
-        throw (Bureaucrat::GradeTooHighException());
+        throw (Bureaucrat::GradeTooLowException());
 }
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs)
@@ -85,7 +85,6 @@ void Bureaucrat::signForm(Form fofo) const
         std::cout << getName();
         std::cout << " signed ";
         std::cout << fofo.getName() << std::endl;
-        
     }
     catch(const std::exception& e)
     {

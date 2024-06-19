@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:43:59 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/06/12 13:23:17 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/18 14:18:38 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,3 @@ void PresidentialPardonForm::exec_Forms(Bureaucrat const &executor) const
     else
         throw (AForm::GradeTooLowException());
 }
-
-
-
