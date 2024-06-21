@@ -15,6 +15,8 @@
 #include <string>
 #include <iostream>
 #include <climits>
+#include <cstring>
+#include <iomanip>
 
 class ScalarConverter
 {
@@ -29,6 +31,7 @@ public:
     static int is_int(std::string str);
     static int is_float(std::string str);
     static int is_double(std::string str);
+    static char convert_to_char(std::string str);
 
 };
 

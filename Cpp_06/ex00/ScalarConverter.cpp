@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 13:08:27 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/06/19 17:56:56 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/21 15:12:08 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,12 @@ int ScalarConverter::is_double(std::string str)
     return (0);
 }
 
+char ScalarConverter::convert_to_char(std::string str)
+{
+    char str_conv = str[0];
+    //je pleure//
+    return (str_conv);
+}
 
 int ScalarConverter::convert(std::string str)
 {
@@ -122,23 +128,30 @@ int ScalarConverter::convert(std::string str)
         return (1) ;
     if (is_char(str) == 0)
     {
-        std::cout << "ITS A BOY ---> CHAR " << std::endl;
+        std::cout << "ITS A BOY ---> CHAR ---> " << "'" << str << "'" << std::endl;
+        char converted_char = convert_to_char(str);
+        std::cout << "char: " <<  "'" << converted_char << "'" << std::endl;
+        std::cout << "int: " << static_cast<int>(converted_char) << std::endl;
+        std::cout << "float: "  << static_cast<float>(converted_char) << "f" << std::endl;
+        std::cout << "double: " << std::fixed << std::setprecision(2) << static_cast<double>(converted_char) << std::endl;
     }
     else if (is_int(str) == 0)
     {
-        std::cout << "ITS A BOY ---> INT " << std::endl;
+        std::cout << "ITS A BOY ---> INT "  << "'" << str << "'" << std::endl;
         //ft_convert to int//
     }
     else if (is_float(str) == 0)
     {
-        std::cout << "ITS A BOY ---> FLOAT " << std::endl;
+        std::cout << "ITS A BOY ---> FLOAT "  << "'" << str << "'" << std::endl;
         //ft_convert to float//
     }
     else if (is_double(str) == 0)
     {
-        std::cout << "ITS A BOY ---> DOUBLE " << std::endl;
+        std::cout << "ITS A BOY ---> DOUBLE "  << "'" << str << "'" << std::endl;
         //ft_convert to double//
     }
+    else
+        return (1);
     return (0);
 }
 
