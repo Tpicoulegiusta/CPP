@@ -44,6 +44,8 @@ public:
     static bool check_float(std::string str);
     static bool check_int_1(std::string str);
     static double convert_to_double(std::string str);
+    static int ft_ouinouin(std::string str);
+
 
 
 
