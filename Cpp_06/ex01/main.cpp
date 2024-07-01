@@ -1,43 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.cpp                                     :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/27 14:49:00 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/06/28 14:25:49 by tpicoule         ###   ########.fr       */
+/*   Created: 2024/07/01 13:51:51 by tpicoule          #+#    #+#             */
+/*   Updated: 2024/07/01 14:46:24 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 
-Serializer::Serializer()
+int main ()
 {
-}
+    Data data;
+    data.name = "FBI classified";
+    data.i = 999;
 
-Serializer::~Serializer()
-{
-}
+    std::cout << "Address at the begining: " << &data << std::endl;
 
-Serializer &Serializer::operator=(Serializer const &rhs)
-{
-    (void) rhs;
-    return (*this);
-}
+    uintptr_t serialized = Serializer::serialize(&data);
+    Data *deserialized = Serializer::deserialize(serialized);
 
-Serializer::Serializer(Serializer const &cpy)
-{
-    *this = cpy;
+    std::cout << "Serialized_ADDRESS: " << serialized << std::endl;
+    std::cout << "deserialized_ADDRESS: " << deserialized << std::endl;
 }
-
-uintptr_t Serializer::serialize(Data* ptr)
-{
-    return (reinterpret_cast<uintptr_t>(ptr));
-}
-
-Data* Serializer::deserialize(uintptr_t raw)
-{
-    return (reinterpret_cast<Data*>(raw));
-}
-

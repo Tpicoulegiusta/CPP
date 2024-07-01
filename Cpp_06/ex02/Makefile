@@ -1,12 +1,12 @@
 SRC = main.cpp \
-	  Serializer.cpp
+	  Base.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 RM = rm -f
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = Add
+NAME = Base
 
 all: $(NAME)
 
