@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:47:48 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/06 17:41:31 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:31:02 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int main()
 {
     std::string input;
     PhoneBook Repertory;
-    //PhoneBook Inside;
     while (input != "EXIT")
     {
         std::cout << " ADD SEARCH or EXIT ";
