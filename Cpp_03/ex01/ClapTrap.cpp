@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 17:54:04 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/17 15:11:27 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/05/17 16:36:59 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 ClapTrap::ClapTrap()
 {
+    std::cout << "Default Constructor called" << std::endl;
 	this->_Name = "Ivan";
     this->_Hit_points = 10;
     this->_Energy_points = 10;
     this->_Attack_damage = 0; 
-    std::cout << "Default Constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
@@ -26,13 +26,13 @@ ClapTrap::~ClapTrap()
     std::cout << "Destructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string Name)
+ClapTrap::ClapTrap(std::string Name, int hit_points, int energy_points, int attack_damage)
 {
-	this->_Name = Name;
-    this->_Hit_points = 10;
-    this->_Energy_points = 10;
-    this->_Attack_damage = 0; 
     std::cout << "Other Constructor Named called" << std::endl;
+    this->_Name = Name;
+    this->_Hit_points = hit_points;
+    this->_Energy_points = energy_points;
+    this->_Attack_damage = attack_damage; 
 }
 
 
