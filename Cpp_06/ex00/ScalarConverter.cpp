@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 13:08:27 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/06/26 17:36:37 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/26 18:14:18 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,7 +160,7 @@ bool ScalarConverter::check_int_1(std::string str)
     double converted_double = atof(str.c_str());
     if (converted_double > std::numeric_limits<int>::max() || converted_double < std::numeric_limits<int>::min())
     {
-        std::cout << converted_double << std::endl;
+        // std::cout << converted_double << std::endl;
         return (1);
     }
     return (0);
@@ -171,16 +171,69 @@ double ScalarConverter::convert_to_double(std::string str)
     double converted_double;
     std::stringstream ss(str);
     ss >> converted_double;
-    std::cout << converted_double << std::endl;
     return (converted_double);
 }
 
-
+int ScalarConverter::ft_ouinouin(std::string str)
+{
+    if (str == "-inff")
+    {
+        std::cout << "char: " <<  "impossible" << std::endl;
+        std::cout << "int: " << "impossible" << std::endl;
+        std::cout << "float: "  << "-inff" << std::endl;
+        std::cout << "double: " << "-inf" << std::endl;
+        return (1);
+    }
+    else if (str == "+inff")
+    {
+        std::cout << "char: " <<  "impossible" << std::endl;
+        std::cout << "int: " << "impossible" << std::endl;
+        std::cout << "float: "  << "+inff" << std::endl;
+        std::cout << "double: " << "+inf" << std::endl;
+        return (1);
+    }
+    else if (str == "-inf")
+    {
+        std::cout << "char: " <<  "impossible" << std::endl;
+        std::cout << "int: " << "impossible" << std::endl;
+        std::cout << "float: "  << "-inff" << std::endl;
+        std::cout << "double: " << "-inf" << std::endl;
+        return (1);
+    }
+    else if (str == "+inf")
+    {
+        std::cout << "char: " <<  "impossible" << std::endl;
+        std::cout << "int: " << "impossible" << std::endl;
+        std::cout << "float: "  << "+inff" << std::endl;
+        std::cout << "double: " << "+inf" << std::endl;
+        return (1);
+    }
+    else if (str == "nan")
+    {
+        std::cout << "char: " <<  "impossible" << std::endl;
+        std::cout << "int: " << "impossible" << std::endl;
+        std::cout << "float: "  << "nanf" << std::endl;
+        std::cout << "double: " << "nan" << std::endl;
+        return (1);
+    }
+    else if (str == "nanf")
+    {
+        std::cout << "char: " <<  "impossible" << std::endl;
+        std::cout << "int: " << "impossible" << std::endl;
+        std::cout << "float: "  << "nanf" << std::endl;
+        std::cout << "double: " << "nan" << std::endl;
+        return (1);
+    }
+    else
+        return (0);
+}
 
 
 
 int ScalarConverter::convert(std::string str)
 {
+    if (ft_ouinouin(str) == 1)
+        return (0);
     if (str.empty())
         return (1);
     if (is_char(str) == 0)
@@ -198,21 +251,24 @@ int ScalarConverter::convert(std::string str)
         int converted_int = convert_to_int(str);
         if (converted_int > CHAR_MIN && converted_int < CHAR_MAX)
         {
-            std::cout << "char: " <<  "'" << converted_int << "'" << std::endl;
+            if (isprint(converted_int))
+                std::cout << "char: " <<  "'" << static_cast<char>(converted_int) << "'" << std::endl;
+            else
+                std::cout << "char: " <<  "Non displayable" << std::endl;
         }
         else
         {
-            std::cout << "char: " <<  "Non displayable" << std::endl;
+            std::cout << "char: " <<  "impossible" << std::endl;
         }
         if (check(str) == 0)
         {
-            std::cout << "int: " << "'" << converted_int << "'" << std::endl;
+            std::cout << "int: " << converted_int << std::endl;
             std::cout << "float: "  << std::fixed << std::setprecision(1) << static_cast<float>(converted_int) << "f" << std::endl;
             std::cout << "double: " << std::setprecision(1) << static_cast<double>(converted_int) << std::endl;
         }
         else
         {
-            std::cout << "int: " << "'" << "impossible" << "'" << std::endl;
+            std::cout << "int: " << "impossible" << std::endl;
             std::cout << "float: "  << "impossible" << std::endl;
             std::cout << "double: " << "impossible" << std::endl; 
         }
@@ -223,28 +279,31 @@ int ScalarConverter::convert(std::string str)
         float converted_float = convert_to_float(str);
         if (converted_float > CHAR_MIN && converted_float < CHAR_MAX)
         {
-            std::cout << "char: " <<  "'" << converted_float << "'" << std::endl;
+            if (isprint(converted_float))
+                std::cout << "char: " <<  "'" << static_cast<char>(converted_float) << "'" << std::endl;
+            else
+                std::cout << "char: " <<  "Non displayable" << std::endl;
         }
         else
         {
-            std::cout << "char: " <<  "Non displayable" << std::endl;
+            std::cout << "char: " <<  "impossible" << std::endl;
         }
         if (check_float(str) == 0)
         {
             if(check_int_1(str) == 0)
             {
-                std::cout << "int: " << "'" << converted_float << "'" << std::endl;
+                std::cout << "int: " << converted_float << std::endl;
             }
             else
             {
-                std::cout << "int: " << "'" << "impossible" << "'" << std::endl;
+                std::cout << "int: " << "impossible" << std::endl;
             }
             std::cout << "float: "  << std::fixed << std::setprecision(1) << static_cast<float>(converted_float) << "f" << std::endl;
             std::cout << "double: " << std::setprecision(1) << static_cast<double>(converted_float) << std::endl;
         }
         else
         {
-            std::cout << "int: " << "'" << "impossible" << "'" << std::endl;
+            std::cout << "int: " << "impossible" << std::endl;
             std::cout << "float: "  << "impossible" << std::endl;
             std::cout << "double: " << "impossible" << std::endl; 
         }
@@ -256,21 +315,22 @@ int ScalarConverter::convert(std::string str)
         float converted_double = convert_to_double(str);
         if (converted_double > CHAR_MIN && converted_double < CHAR_MAX)
         {
-            std::cout << "char: " <<  "'" << converted_double << "'" << std::endl;
+            if (isprint(converted_double))
+                std::cout << "char: " <<  "'" << static_cast<char>(converted_double) << "'" << std::endl;
+            else
+                std::cout << "char: " <<  "Non displayable" << std::endl;
         }
         else
         {
-            std::cout << "char: " <<  "Non displayable" << std::endl;
+            std::cout << "char: " <<  "impossible" << std::endl;
         }
-        // if (check_double(str) == 0)
-        // {
         if(check_int_1(str) == 0)
         {
-            std::cout << "int: " << "'" << converted_double << "'" << std::endl;
+            std::cout << "int: " << converted_double << std::endl;
         }
         else
         {
-            std::cout << "int: " << "'" << "impossible" << "'" << std::endl;
+            std::cout << "int: " << "impossible" << std::endl;
         }
         if(check_float(str) == 0)
         {
@@ -278,7 +338,7 @@ int ScalarConverter::convert(std::string str)
         }
         else
         {
-            std::cout << "float: " << "'" << "impossible" << "'" << std::endl;
+            std::cout << "float: " << "impossible" << std::endl;
         }
         std::cout << "double: " << std::setprecision(1) << static_cast<double>(converted_double) << std::endl;
         //}
