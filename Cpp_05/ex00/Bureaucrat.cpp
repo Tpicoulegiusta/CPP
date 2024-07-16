@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 15:07:24 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/06/07 16:46:21 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/10 16:46:56 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ Bureaucrat::Bureaucrat() : _name("Default_name")
 {
     this->_grade = 1;
     if (this->_grade > 150)
-        throw (Bureaucrat::GradeTooHighException());
-    if (this->_grade < 0)
         throw (Bureaucrat::GradeTooLowException());
+    if (this->_grade < 1)
+        throw (Bureaucrat::GradeTooHighException());
 }
 
 Bureaucrat::~Bureaucrat()
@@ -37,12 +37,16 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::in_grade()
 {
-    this->_grade++;
+    this->_grade--;
+    if (this->_grade < 1)
+        throw (Bureaucrat::GradeTooLowException());
 }
 
 void Bureaucrat::dec_grade()
 {
-    this->_grade--;
+    this->_grade++;
+    if (this->_grade > 150)
+        throw (Bureaucrat::GradeTooHighException());
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& rhs)
@@ -52,5 +56,16 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& rhs)
     os << rhs.getGrade();
     
 	return (os);
+}
+
+Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs)
+{
+    this->_grade = rhs._grade;
+    return (*this);
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat const &cpy)
+{
+    *this = cpy;
 }
 

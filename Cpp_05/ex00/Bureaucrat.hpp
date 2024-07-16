@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 15:07:22 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/06/07 16:38:09 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/10 14:24:41 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ public:
     int getGrade() const;
     void in_grade();
     void dec_grade();
+    Bureaucrat &operator=(Bureaucrat const &rhs);
+    Bureaucrat(Bureaucrat const &cpy);
     class GradeTooHighException : public std::exception
     {
         public:
