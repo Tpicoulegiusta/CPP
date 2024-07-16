@@ -1,12 +1,11 @@
- SRC = main.cpp \
-	   Span.cpp
+ SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 RM = rm -f
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g
 
-NAME = espania
+NAME = Mutant
 
 all: $(NAME)
 

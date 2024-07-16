@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:54:04 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/07/11 16:39:01 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/07/12 16:20:56 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iostream>
 #include <vector>
 #include <exception>
+#include <algorithm>
 
 class Span
 {
@@ -28,6 +29,7 @@ public:
     Span(Span const &cpy);
     ~Span();
     void addNumber(int number);
+    void addNumber(std::vector<int>::iterator it_first, std::vector<int>::iterator it_last);
     int shortestSpan();
     int longestSpan();
 };
