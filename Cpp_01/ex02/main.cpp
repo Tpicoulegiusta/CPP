@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 13:20:38 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/08 13:54:00 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:12:24 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 
     std::string val_ptr = *stringPTR;//val_ptr take the value of the pointer//
     std::string val_ref = stringREF;//val_ref take the value of the ref//
-    
+
     std::cout << &brain << std::endl;//memory address of the sring variable//
     std::cout << stringPTR << std::endl;//memory address stringPTR//
     std::cout << &stringREF << std::endl;//memory address stringREF//
