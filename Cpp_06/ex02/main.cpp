@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/01 15:28:43 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/07/04 13:54:03 by tpicoule         ###   ########.fr       */
+/*   Created: 2024/07/02 14:18:54 by tpicoule          #+#    #+#             */
+/*   Updated: 2024/07/04 13:53:11 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-# define BASE_HPP
-// #include "C.hpp"
-#include <string>
-// #include "A.hpp"
-#include <iostream>
-// #include "B.hpp"
-#include <cstdlib>
+#include "Base.hpp"
+#include "B.hpp"
+#include "A.hpp"
+#include "C.hpp"
 
-class Base
+
+int main ()
 {
-private:
-public:
-    virtual ~Base();
-};
+	Base	*base;
 
-Base *generate(void);
-void identify(Base *p);
-void identify(Base &p);
+	std::cout << "RUNNING SUBJECT TESTS" << std::endl;
+	base = generate();
+	identify(base);
+	identify(*base);
+	delete base;
 
-
-
-#endif
+	std::cout << "All tests completed" << std::endl;
+	return (0);
+}
