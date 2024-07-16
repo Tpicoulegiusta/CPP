@@ -6,20 +6,16 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 14:23:47 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/20 14:00:46 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:02:51 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap()
+ScavTrap::ScavTrap() : ClapTrap("Scav_Ivan", 100, 50, 20)
 {
     std::cout << "Default ScavTrap Constructor called" << std::endl;
-	this->_Name = "Scav_Ivan";
-    this->_Hit_points = 100;
-    this->_Energy_points = 50;
-    this->_Attack_damage = 20;
 }
 
 ScavTrap::~ScavTrap()
@@ -30,9 +26,6 @@ ScavTrap::~ScavTrap()
 ScavTrap::ScavTrap(std::string Name) : ClapTrap(Name, 100, 50, 20)
 {
     std::cout << "Default ScavTrap Other_Constructor Named called" << std::endl;
-    this->_Hit_points = 100;
-    this->_Energy_points = 50;
-    this->_Attack_damage = 20; 
 }
 
 
