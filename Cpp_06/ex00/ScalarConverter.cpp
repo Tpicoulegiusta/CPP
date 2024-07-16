@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 13:08:27 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/06/26 18:14:18 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/27 14:30:11 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,7 @@ float ScalarConverter::convert_to_float(std::string str)
 bool ScalarConverter::check_float(std::string str)
 {
     double converted_double = atof(str.c_str());
-    if (converted_double > std::numeric_limits<float>::max() || converted_double < std::numeric_limits<float>::min())
+    if (converted_double > std::numeric_limits<float>::max() || converted_double < -std::numeric_limits<float>::max() - 1)
     {
         //std::cout << converted_double << std::endl;
         return (1);
@@ -242,8 +242,14 @@ int ScalarConverter::convert(std::string str)
         char converted_char = convert_to_char(str);
         std::cout << "char: " <<  "'" << converted_char << "'" << std::endl;
         std::cout << "int: " << static_cast<int>(converted_char) << std::endl;
-        std::cout << "float: "  << std::fixed << std::setprecision(1) << static_cast<float>(converted_char) << "f" << std::endl;
-        std::cout << "double: " << std::setprecision(1) << static_cast<double>(converted_char) << std::endl;
+        if (static_cast<float>(converted_char) == static_cast<int>(converted_char))
+            std::cout << "float: " << static_cast<float>(converted_char) << ".0f" << std::endl;
+        else
+            std::cout << "float: " << static_cast<float>(converted_char) << "f" << std::endl;
+        if (static_cast<double>(converted_char) == static_cast<int>(converted_char))
+            std::cout << "double: " << static_cast<double>(converted_char) << ".0" << std::endl;
+        else
+            std::cout << "double: " << static_cast<double>(converted_char) << std::endl;
     }
     else if (is_int(str) == 0)
     {
@@ -263,8 +269,14 @@ int ScalarConverter::convert(std::string str)
         if (check(str) == 0)
         {
             std::cout << "int: " << converted_int << std::endl;
-            std::cout << "float: "  << std::fixed << std::setprecision(1) << static_cast<float>(converted_int) << "f" << std::endl;
-            std::cout << "double: " << std::setprecision(1) << static_cast<double>(converted_int) << std::endl;
+            if (static_cast<float>(converted_int) == static_cast<int>(converted_int))
+                std::cout << "float: " << static_cast<float>(converted_int) << ".0f" << std::endl;
+            else
+                std::cout << "float: " << static_cast<float>(converted_int) << "f" << std::endl;
+            if (static_cast<double>(converted_int) == static_cast<int>(converted_int))
+                std::cout << "double: " << static_cast<double>(converted_int) << ".0" << std::endl;
+            else
+                std::cout << "double: " << static_cast<double>(converted_int) << std::endl;
         }
         else
         {
@@ -292,14 +304,20 @@ int ScalarConverter::convert(std::string str)
         {
             if(check_int_1(str) == 0)
             {
-                std::cout << "int: " << converted_float << std::endl;
+                std::cout << "int: " << static_cast<int>(converted_float) << std::endl;
             }
             else
             {
                 std::cout << "int: " << "impossible" << std::endl;
             }
-            std::cout << "float: "  << std::fixed << std::setprecision(1) << static_cast<float>(converted_float) << "f" << std::endl;
-            std::cout << "double: " << std::setprecision(1) << static_cast<double>(converted_float) << std::endl;
+            if (static_cast<float>(converted_float) == static_cast<int>(converted_float))
+                std::cout << "float: " << static_cast<float>(converted_float) << ".0f" << std::endl;
+            else
+                std::cout << "float: " << static_cast<float>(converted_float) << "f" << std::endl;
+            if (static_cast<double>(converted_float) == static_cast<int>(converted_float))
+                std::cout << "double: " << static_cast<double>(converted_float) << ".0" << std::endl;
+            else
+                std::cout << "double: " << static_cast<double>(converted_float) << std::endl;
         }
         else
         {
@@ -312,7 +330,7 @@ int ScalarConverter::convert(std::string str)
     else if (is_double(str) == 0)
     {
         std::cout << "ITS A BOY ---> DOUBLE "  << "'" << str << "'" << std::endl;
-        float converted_double = convert_to_double(str);
+        double converted_double = convert_to_double(str);
         if (converted_double > CHAR_MIN && converted_double < CHAR_MAX)
         {
             if (isprint(converted_double))
@@ -326,7 +344,7 @@ int ScalarConverter::convert(std::string str)
         }
         if(check_int_1(str) == 0)
         {
-            std::cout << "int: " << converted_double << std::endl;
+            std::cout << "int: " << static_cast<int>(converted_double) << std::endl;
         }
         else
         {
@@ -334,13 +352,26 @@ int ScalarConverter::convert(std::string str)
         }
         if(check_float(str) == 0)
         {
-            std::cout << "float: "  << std::fixed << std::setprecision(1) << static_cast<float>(converted_double) << "f" << std::endl;
+            if (static_cast<float>(converted_double) == static_cast<int>(converted_double))
+                std::cout << "float: " << static_cast<float>(converted_double) << ".0f" << std::endl;
+            else
+                std::cout << "float: " << static_cast<float>(converted_double) << "f" << std::endl;
         }
         else
         {
             std::cout << "float: " << "impossible" << std::endl;
         }
-        std::cout << "double: " << std::setprecision(1) << static_cast<double>(converted_double) << std::endl;
+        if (converted_double >= std::numeric_limits<double>::max() || converted_double <= -std::numeric_limits<double>::max() - 1)
+        {
+            std::cout << "double: " << "impossible" << std::endl;
+        }
+        else
+        {
+            if (static_cast<double>(converted_double) == static_cast<int>(converted_double))
+                std::cout << "double: " << static_cast<double>(converted_double) << ".0" << std::endl;
+            else
+                std::cout << "double: " << static_cast<double>(converted_double) << std::endl;
+        }
         //}
         // else
         // {
