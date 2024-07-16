@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 15:07:18 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/06/12 14:37:24 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/18 14:27:10 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ void	testShruberry(void) {
 		std::cout << "[!] Good bureau will try to sign and execute the form." << std::endl;
 		ShrubberyCreationForm	form("goodForm");
 
+		std::cout << "-- TRYING TO SIGN FORM" << std::endl;
 		goodBureau.signForm(form);
+		std::cout << "-- TRYING TO EXECUTE FORM" << std::endl;
 		goodBureau.executeForm(form);
 	} catch (std::exception	&exception) {
 		std::cout << "[Form] " "Exception caught!" << std::endl;
@@ -42,7 +44,9 @@ void	testShruberry(void) {
 		std::cout << "[!] Bad sign bureau will try to sign and execute the form." << std::endl;
 		ShrubberyCreationForm	form("badSignForm");
 
+		std::cout << "-- TRYING TO SIGN FORM" << std::endl;
 		badSignBureau.signForm(form);
+		std::cout << "-- TRYING TO EXECUTE FORM" << std::endl;
 		badSignBureau.executeForm(form);
 	} catch (std::exception	&exception) {
 		std::cout << "[Form] " "Exception caught!" << std::endl;
@@ -55,7 +59,9 @@ void	testShruberry(void) {
 		std::cout << "[!] Bad exec bureau will try to sign and execute the form." << std::endl;
 		ShrubberyCreationForm	form("badExecForm");
 
+		std::cout << "-- TRYING TO SIGN FORM" << std::endl;
 		badExecBureau.signForm(form);
+		std::cout << "-- TRYING TO EXECUTE FORM" << std::endl;
 		badExecBureau.executeForm(form);
 	} catch (std::exception	&exception) {
 		std::cout << "[Form] " "Exception caught!" << std::endl;
@@ -80,7 +86,9 @@ void	testRobotomy(void) {
 		std::cout << "[!] Good bureau will try to sign and execute the form." << std::endl;
 		RobotomyRequestForm	form("goodForm");
 
+		std::cout << "-- TRYING TO SIGN FORM" << std::endl;
 		goodBureau.signForm(form);
+		std::cout << "-- TRYING TO EXECUTE FORM" << std::endl;
 		goodBureau.executeForm(form);
 	} catch (std::exception	&exception) {
 		std::cout << "[Form] " "Exception caught!" << std::endl;
@@ -93,7 +101,9 @@ void	testRobotomy(void) {
 		std::cout << "[!] Bad sign bureau will try to sign and execute the form." << std::endl;
 		RobotomyRequestForm	form("badSignForm");
 
+		std::cout << "-- TRYING TO SIGN FORM" << std::endl;
 		badSignBureau.signForm(form);
+		std::cout << "-- TRYING TO EXECUTE FORM" << std::endl;
 		badSignBureau.executeForm(form);
 	} catch (std::exception	&exception) {
 		std::cout << "[Form] " "Exception caught!" << std::endl;
@@ -106,7 +116,9 @@ void	testRobotomy(void) {
 		std::cout << "[!] Bad exec bureau will try to sign and execute the form." << std::endl;
 		RobotomyRequestForm	form("badExecForm");
 
+		std::cout << "-- TRYING TO SIGN FORM" << std::endl;
 		badExecBureau.signForm(form);
+		std::cout << "-- TRYING TO EXECUTE FORM" << std::endl;
 		badExecBureau.executeForm(form);
 	} catch (std::exception	&exception) {
 		std::cout << "[Form] " "Exception caught!" << std::endl;
@@ -131,7 +143,9 @@ void	testPresidential(void) {
 		std::cout << "[!] Good bureau will try to sign and execute the form." << std::endl;
 		PresidentialPardonForm	form("goodForm");
 
+		std::cout << "-- TRYING TO SIGN FORM" << std::endl;
 		goodBureau.signForm(form);
+		std::cout << "-- TRYING TO EXECUTE FORM" << std::endl;
 		goodBureau.executeForm(form);
 	} catch (std::exception	&exception) {
 		std::cout << "[Form] " "Exception caught!" << std::endl;
@@ -144,7 +158,9 @@ void	testPresidential(void) {
 		std::cout << "[!] Bad sign bureau will try to sign and execute the form." << std::endl;
 		PresidentialPardonForm	form("badSignForm");
 
+		std::cout << "-- TRYING TO SIGN FORM" << std::endl;
 		badSignBureau.signForm(form);
+		std::cout << "-- TRYING TO EXECUTE FORM" << std::endl;
 		badSignBureau.executeForm(form);
 	} catch (std::exception	&exception) {
 		std::cout << "[Form] " "Exception caught!" << std::endl;
@@ -157,7 +173,9 @@ void	testPresidential(void) {
 		std::cout << "[!] Bad exec bureau will try to sign and execute the form." << std::endl;
 		PresidentialPardonForm	form("badExecForm");
 
+		std::cout << "-- TRYING TO SIGN FORM" << std::endl;
 		badExecBureau.signForm(form);
+		std::cout << "-- TRYING TO EXECUTE FORM" << std::endl;
 		badExecBureau.executeForm(form);
 	} catch (std::exception	&exception) {
 		std::cout << "[Form] " "Exception caught!" << std::endl;
