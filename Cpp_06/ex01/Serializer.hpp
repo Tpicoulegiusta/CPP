@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:49:02 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/07/01 14:44:17 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/07/09 14:00:27 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ struct Data
 class Serializer
 {
 private:
-public:
     Serializer();
+    Serializer(Serializer const &cpy);
+public:
     ~Serializer();
     Serializer &operator=(Serializer const &rhs);
-    Serializer(Serializer const &cpy);
     static uintptr_t serialize(Data* ptr);
     static Data* deserialize(uintptr_t raw);
 };

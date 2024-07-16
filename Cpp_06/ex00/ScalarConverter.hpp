@@ -27,11 +27,11 @@
 class ScalarConverter
 {
 private:
-public:
     ScalarConverter();
+    ScalarConverter(ScalarConverter const &cpy);
+public:
     ~ScalarConverter();
     ScalarConverter &operator=(ScalarConverter const &rhs);
-    ScalarConverter(ScalarConverter const &cpy);
     static int convert(std::string str);
     static int is_char(std::string str);
     static int is_int(std::string str);
