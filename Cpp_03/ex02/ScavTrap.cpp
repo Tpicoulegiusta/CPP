@@ -6,14 +6,14 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 14:23:47 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/20 14:02:51 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/03 15:12:28 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap("Scav_Ivan", 100, 50, 20)
+ScavTrap::ScavTrap() : ClapTrap()
 {
     std::cout << "Default ScavTrap Constructor called" << std::endl;
 }

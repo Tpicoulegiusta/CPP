@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:14:01 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/20 17:25:50 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/04 12:09:39 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	testWrongCat(void) {
 	std::cout << "\n>>> RUNNNING WRONGCAT TESTS\n" << std::endl;
 	const WrongAnimal*	meta = new WrongAnimal();
 	const Animal*		l = new Dog();
-	const WrongAnimal*	k = new WrongCat();
+	const WrongCat*		k = new WrongCat();
 
 	std::cout << l->getType() << " " << std::endl;
 	std::cout << k->getType() << " " << std::endl;
@@ -56,6 +56,6 @@ int	main(void) {
 	testWrongCat();
 
 	// Tests are done
-	std::cout << "All tests completed. Want to check for leaks? Run 'make debug'" << std::endl;
+	std::cout << "All tests completed." << std::endl;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:12:59 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/06 17:17:05 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/05/28 14:56:57 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class PhoneBook
 {
 	private :
-		Contact _Contact[8];
+		Contact _Contact[2];
 		int		_index;
 		int		_ctc_nbr;
 	public :

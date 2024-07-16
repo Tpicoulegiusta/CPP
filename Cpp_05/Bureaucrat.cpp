@@ -1,34 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   weapon.hpp                                         :+:      :+:    :+:   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 16:09:00 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/09 16:51:53 by tpicoule         ###   ########.fr       */
+/*   Created: 2024/05/23 15:07:24 by tpicoule          #+#    #+#             */
+/*   Updated: 2024/06/07 13:38:35 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN
-# define HUMAN
+#include  "Bureaucrat.hpp"
 
-#include "HumanA.hpp"
-#include "weapon.hpp"
-#include <string>
-#include <iostream>
-
-class Weapon
+Bureaucrat::Bureaucrat()
 {
-private:
-    std::string _type;
-public:
-    // Weapon();
-    Weapon(std::string arme);
-    ~Weapon();
+    this->_grade = 0;
+}
 
-	std::string const &getType() const;
-	void setType(std::string str);
-};
+Bureaucrat::~Bureaucrat()
+{
+}
 
-#endif
+std::string const Bureaucrat::getName() const
+{
+    return (this->_name);
+}
+
+int const Bureaucrat::getGrade() const
+{
+    return (this->_grade);
+}
+
+void Bureaucrat::im_grade()
+{
+    this->_grade++;
+}
+
+void Bureaucrat::dec_grade()
+{
+    this->_grade--;
+}
+
+
+
+
+
+
+

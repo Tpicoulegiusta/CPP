@@ -1,7 +1,7 @@
 SRC = main.cpp \
 	  HumanA.cpp \
 	  HumanB.cpp \
-	  weapon.cpp
+	  Weapon.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++

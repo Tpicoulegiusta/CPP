@@ -6,12 +6,12 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:08:43 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/09 15:11:41 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/05/29 13:13:17 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
-#include "weapon.hpp"
+#include "Weapon.hpp"
 
 HumanA::HumanA(std::string name, Weapon &sabre) : _name(name), _sabre(sabre)
 {

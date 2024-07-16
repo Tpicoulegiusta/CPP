@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 14:10:54 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/29 13:39:01 by tpicoule         ###   ########.fr       */
+/*   Created: 2024/05/08 16:08:58 by tpicoule          #+#    #+#             */
+/*   Updated: 2024/05/29 13:10:56 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL
-# define HARL
-#include <string>
-#include <iostream>
+#include "HumanA.hpp"
+#include "Weapon.hpp"
 
-
-
-class Harl
+Weapon::Weapon(std::string arme)
 {
-private:
-    void debug(void);
-    void info(void);
-    void warning(void);
-    void error(void);
-public:
-    Harl();
-    ~Harl();
-    void complain(std::string level);
-};
+    this->_type = arme;
+}
 
+Weapon::~Weapon()
+{
 
+}
+std::string const &Weapon::getType() const
+{
+    return(this->_type);
+}
 
-
-
-#endif
+void Weapon::setType(std::string str)
+{
+    this->_type = str;
+}

@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:22:40 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/16 17:18:13 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:33:57 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 #include <string>
 #include <iostream>
 #include <cmath>
+
+# define BRED	"\033[1;31m"
+# define BGRN	"\033[1;32m"
+# define BYEL	"\033[1;33m"
+# define BBLU	"\033[1;34m"
+# define BMAG	"\033[1;35m"
+# define BCYN	"\033[1;36m"
+# define BWHT	"\033[1;37m"
+# define CRESET	"\033[0m"
 
 class Fixed
 {

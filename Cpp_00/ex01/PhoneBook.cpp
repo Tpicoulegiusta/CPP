@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 13:26:27 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/06 17:18:32 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/05/28 14:57:15 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ void    PhoneBook::add()
     std::string darkestsecret = user_input(" Donne moi ton pire secret ");
     this->_Contact[this->_index].set_d(darkestsecret);
     this->_index++;
-    if(this->_ctc_nbr < 8)
+    if(this->_ctc_nbr < 2)
         this->_ctc_nbr++;
-    if (this->_index == 8)
+    if (this->_index == 2)
         this->_index = 0;
 }
 

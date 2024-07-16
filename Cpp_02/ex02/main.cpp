@@ -6,23 +6,14 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:22:45 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/16 17:29:01 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:33:51 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-# define BRED	"\033[1;31m"
-# define BGRN	"\033[1;32m"
-# define BYEL	"\033[1;33m"
-# define BBLU	"\033[1;34m"
-# define BMAG	"\033[1;35m"
-# define BCYN	"\033[1;36m"
-# define BWHT	"\033[1;37m"
-# define CRESET	"\033[0m"
-
 void	testSubject(void) {
-	std::cout << BWHT "\n>>> RUNNNING SUBJECT TESTS\n" CRESET << std::endl;
+	std::cout << BWHT ">>> RUNNNING SUBJECT TESTS" CRESET << std::endl;
 	Fixed		a;
 	Fixed const	b(Fixed(5.05f) * Fixed(2));
 
@@ -38,7 +29,7 @@ void	testSubject(void) {
 }
 
 void	testMinMax(void) {
-	std::cout << BWHT "\n>>> RUNNNING MIN & MAX TESTS\n" CRESET << std::endl;
+	std::cout << BWHT ">>> RUNNNING MIN & MAX TESTS" CRESET << std::endl;
 	Fixed		a(42);
 	Fixed		b(24);
 	Fixed		c(24.1f);
@@ -61,7 +52,7 @@ void	testMinMax(void) {
 }
 
 void	testComparison(void) {
-	std::cout << BWHT "\n>>> RUNNNING COMPARISON TESTS\n" CRESET << std::endl;
+	std::cout << BWHT ">>> RUNNNING COMPARISON TESTS" CRESET << std::endl;
 	Fixed		a(42);
 	Fixed		b(24);
 	Fixed		c(42);
@@ -83,7 +74,7 @@ void	testComparison(void) {
 }
 
 void	testOperators(void) {
-	std::cout << BWHT "\n>>> RUNNNING COMPARISON TESTS\n" CRESET << std::endl;
+	std::cout << BWHT ">>> RUNNNING COMPARISON TESTS" CRESET << std::endl;
 	Fixed		a(42);
 	Fixed		b(24);
 	Fixed		c(42);
@@ -92,14 +83,14 @@ void	testOperators(void) {
 	std::cout << "b=" << b << std::endl;
 	std::cout << "c=" << c << std::endl;
 
-	std::cout << BWHT "Let's add b to a, the result is... " BCYN << a + b << CRESET << std::endl;
-	std::cout << BWHT "Let's add b to c, the result is..." BCYN << c + b << CRESET << std::endl;
-	std::cout << BWHT "Let's substract b from a, the result is... " BCYN << a - b << CRESET << std::endl;
-	std::cout << BWHT "Let's substract b from c, the result is... " BCYN << c - b << CRESET << std::endl;
-	std::cout << BWHT "Let's multiply a and b, the result is... " BCYN << a * b << CRESET << std::endl;
-	std::cout << BWHT "Let's multiply a and c, the result is... " BCYN << a * c << CRESET << std::endl;
-	std::cout << BWHT "Let's divide a by b, the result is... " BCYN << a / b << CRESET << std::endl;
-	std::cout << BWHT "Let's divide a by c, the result is... " BCYN << a / c << CRESET << std::endl;
+	std::cout << BWHT "Let's add b to a, the result is : " BCYN << a + b << CRESET << std::endl;
+	std::cout << BWHT "Let's add b to c, the result is :" BCYN << c + b << CRESET << std::endl;
+	std::cout << BWHT "Let's substract b from a, the result is : " BCYN << a - b << CRESET << std::endl;
+	std::cout << BWHT "Let's substract b from c, the result is : " BCYN << c - b << CRESET << std::endl;
+	std::cout << BWHT "Let's multiply a and b, the result is : " BCYN << a * b << CRESET << std::endl;
+	std::cout << BWHT "Let's multiply a and c, the result is : " BCYN << a * c << CRESET << std::endl;
+	std::cout << BWHT "Let's divide a by b, the result is : " BCYN << a / b << CRESET << std::endl;
+	std::cout << BWHT "Let's divide a by c, the result is : " BCYN << a / c << CRESET << std::endl;
 
 }
 
@@ -110,6 +101,6 @@ int	main(void) {
 	testOperators();
 
 	// Tests are done
-	std::cout << BYEL "All tests completed. Want to check for leaks? Run 'make debug'" CRESET << std::endl;
+	std::cout << BYEL "All tests completed." CRESET << std::endl;
 	return (0);
 }

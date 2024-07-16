@@ -6,16 +6,17 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:08:51 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/09 17:18:42 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/05/29 13:17:36 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
-#include "weapon.hpp"
+#include "Weapon.hpp"
 
 HumanB::HumanB(std::string name)
 {
     this->_name = name;
+    this->couteau = NULL;
 }
 
 HumanB::~HumanB()

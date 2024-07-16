@@ -1,11 +1,12 @@
-SRC = main.cpp
+SRC = main.cpp \
+	  Bureaucrat.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 RM = rm -f
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = Sed
+NAME = Brain
 
 all: $(NAME)
 

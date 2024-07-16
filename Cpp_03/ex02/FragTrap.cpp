@@ -6,13 +6,13 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 08:36:10 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/20 14:03:18 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/03 15:13:15 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : ClapTrap("Ivan_Frag", 100, 100, 30)
+FragTrap::FragTrap() : ClapTrap()
 {
     std::cout << "Default constructor called" << std::endl;
 }

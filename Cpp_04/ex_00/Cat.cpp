@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:48:29 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/20 17:04:23 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/04 12:11:02 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ Cat::~Cat()
     std::cout << "Cat destructor called" << std::endl;
 }
 
-Cat::Cat(std::string type) : Animal(type)
-{
-    std::cout << "Default Cat constructor 2 called" << std::endl;
-}
+// Cat::Cat(std::string type) : Animal(type)
+// {
+//     std::cout << "Default Cat constructor 2 called" << std::endl;
+// }
 Cat &Cat::operator=(Cat const &rhs)
 {
     Animal::operator=(rhs);

@@ -6,14 +6,14 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:08:53 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/09 17:10:12 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/05/29 13:13:05 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HUMANB
 # define HUMANB
 #include "HumanA.hpp"
-#include "weapon.hpp"
+#include "Weapon.hpp"
 
 class HumanB
 {

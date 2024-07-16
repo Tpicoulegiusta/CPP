@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 17:54:04 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/17 15:11:27 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/03 14:43:02 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	std::cout << "ClapTrap " << this->_Name << " took " << amount << " damages " << std::endl;
 	this->_Hit_points -= amount;
 	if (this->_Hit_points < 0)
-	{
 		this->_Hit_points = 0;
-	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount)

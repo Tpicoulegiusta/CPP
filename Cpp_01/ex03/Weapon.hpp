@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   weapon.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 16:08:58 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/09 17:15:11 by tpicoule         ###   ########.fr       */
+/*   Created: 2024/05/08 16:09:00 by tpicoule          #+#    #+#             */
+/*   Updated: 2024/05/29 13:11:33 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef WEAPON
+# define WEAPON
+
 #include "HumanA.hpp"
-#include "weapon.hpp"
+#include "Weapon.hpp"
+#include <string>
+#include <iostream>
 
-Weapon::Weapon(std::string arme)
+class Weapon
 {
-    this->_type = arme;
-}
+private:
+    std::string _type;
+public:
+    // Weapon();
+    Weapon(std::string arme);
+    ~Weapon();
 
-Weapon::~Weapon()
-{
+	std::string const &getType() const;
+	void setType(std::string str);
+};
 
-}
-std::string const &Weapon::getType() const
-{
-    return(this->_type);
-}
-
-void Weapon::setType(std::string str)
-{
-    this->_type = str;
-}
+#endif

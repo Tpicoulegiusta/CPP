@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 17:54:22 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/20 13:49:40 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/03 14:50:15 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,5 @@ public:
     virtual void takeDamage(unsigned int amount);
     virtual void beRepaired(unsigned int amount);
 };
-
-
-
 
 #endif

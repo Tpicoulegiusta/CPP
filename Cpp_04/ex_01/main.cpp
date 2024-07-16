@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:14:01 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/05/21 17:24:25 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/06/04 13:46:07 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,63 +17,41 @@
 #include "WrongCat.hpp"
 #include "Brain.hpp"
 
-// int main ()
-// {
-// 	Animal *Zoo[6] = {new Dog(), new Dog(), new Dog(), 
-// 						new Cat(), new Cat(), new Cat()};
-
-	
-// 	const Animal* j = new Dog();
-// 	const Animal* i = new Cat();
-	
-// 	delete j;//should not create a leak
-// 	delete i;
-// 	for(int i = 0; i != 6; i++)
-// 	{
-// 		delete(Zoo[i]);
-// 	}
-
-// 	return (0);
-// }
-
 void	testDeepCopy(void) {
-	std::cout << "--- Dog's behavior ---" << std::endl;
+	std::cout << "--- START DEEP COPY TESTING ---" << std::endl;
 	Dog	dogA;
 	Dog dogB;
 
-	std::cout << "-------" << std::endl;
-	dogA.getBrain()->_ideas[0] = "DogA's idea";
-	dogB.getBrain()->_ideas[0] = "DogB's idea";
-	std::cout << "DogA's address (" << &dogA << ")..." << std::endl;
-	std::cout << "    idea[0]'s address=" << dogA.getBrain()->_ideas[0] << " (" << &dogA.getBrain()->_ideas[0] << ")" << std::endl;
-	std::cout << "DogB's address (" << &dogB << ")..." << std::endl;
-	std::cout << "    idea[0]'s address=" << dogB.getBrain()->_ideas[0] <<" (" << &dogB.getBrain()->_ideas[0] << ")" << std::endl;
+	dogA.getBrain()->_ideas[0] = "DogA's Idea";
+	dogB.getBrain()->_ideas[0] = "DogB's Idea";
 
-	std::cout << "-------" << std::endl;
-	dogB = dogA;
-	std::cout << "DogA's address (" << &dogA << ")..." << std::endl;
-	std::cout << "    idea[0]'s address=" << dogA.getBrain()->_ideas[0] << " (" << &dogA.getBrain()->_ideas[0] << ")" << std::endl;
-	std::cout << "DogB's address (" << &dogB << ")..." << std::endl;
-	std::cout << "    idea[0]'s address=" << dogB.getBrain()->_ideas[0] <<" (" << &dogB.getBrain()->_ideas[0] << ")" << std::endl;
+	std::cout << "DISPLAYING DOGS IDEAS AND THEIR ADDRESSES" << std::endl;
+	std::cout << "- DogA's idea" << std::endl
+				<< " * content: " << dogA.getBrain()->_ideas[0] << std::endl
+				<< " * address: " << &dogA.getBrain()->_ideas[0] << std::endl;
+	std::cout << "- DogB's idea" << std::endl
+				<< " * content: " << dogB.getBrain()->_ideas[0] << std::endl
+				<< " * address: " << &dogB.getBrain()->_ideas[0] << std::endl;
 
-	std::cout << "--- Cat's behavior ---" << std::endl;
-	Cat	catA;
-	Cat catB;
+	dogA = dogB;
+	std::cout << "DOGA SHOULD NOW HAVE DOGB IDEAS" << std::endl;
+	std::cout << "- DogA's idea" << std::endl
+				<< " * content: " << dogA.getBrain()->_ideas[0] << std::endl
+				<< " * address: " << &dogA.getBrain()->_ideas[0] << std::endl;
+	std::cout << "- DogB's idea" << std::endl
+				<< " * content: " << dogB.getBrain()->_ideas[0] << std::endl
+				<< " * address: " << &dogB.getBrain()->_ideas[0] << std::endl;
 
-	std::cout << "-------" << std::endl;
-	catA.getBrain()->_ideas[0] = "CatA's idea";
-	catB.getBrain()->_ideas[0] = "CatB's idea";
-	std::cout << "CatA's address (" << &catA << ")..." << std::endl;
-	std::cout << "    idea[0]'s address=" << catA.getBrain()->_ideas[0] << " (" << &catA.getBrain()->_ideas[0] << ")" << std::endl;
-	std::cout << "CatB's address (" << &catB << ")..." << std::endl;
-	std::cout << "    idea[0]'s address=" << catB.getBrain()->_ideas[0] <<" (" << &catB.getBrain()->_ideas[0] << ")" << std::endl;
+	std::cout << "EDITING DOGB's IDEA. DOGA SHOULD NOT BE AFFECTED" << std::endl;
+	dogB.getBrain()->_ideas[0] = "New DogB's idea";
+	std::cout << "- DogA's idea" << std::endl
+				<< " * content: " << dogA.getBrain()->_ideas[0] << std::endl
+				<< " * address: " << &dogA.getBrain()->_ideas[0] << std::endl;
+	std::cout << "- DogB's idea" << std::endl
+				<< " * content: " << dogB.getBrain()->_ideas[0] << std::endl
+				<< " * address: " << &dogB.getBrain()->_ideas[0] << std::endl;
 
-	std::cout << "-------" << std::endl;
-	catB = catA;
-	std::cout << "CatA's address (" << &catA << ")..." << std::endl;
-	std::cout << "    idea[0]'s address=" << catA.getBrain()->_ideas[0] << " (" << &catA.getBrain()->_ideas[0] << ")" << std::endl;
-	std::cout << "CatB's address (" << &catB << ")..." << std::endl;
-	std::cout << "    idea[0]'s address=" << catB.getBrain()->_ideas[0] <<" (" << &catB.getBrain()->_ideas[0] << ")" << std::endl;
+	std::cout << "--- END DEEP COPY TESTING ---" << std::endl;
 }
 
 
