@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 14:14:02 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/08/12 14:14:27 by tpicoule         ###   ########.fr       */
+/*   Created: 2024/08/13 13:37:33 by tpicoule          #+#    #+#             */
+/*   Updated: 2024/08/14 15:02:55 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <string>
-#include <iostream>
-#include <cstdio>
-#include <climits>
-#include <sstream>
-#include <cstdlib>
-#include <stack>
+#include "PmergeMe.hpp"
 
+int main(int argc, char **argv)
+{
+    std::cout << "Bienvenue dans le main" << std::endl;
+    check_convert_sort_print(argc, argv);
+    return (0);
+}
 
-void ft_r_p_n(char *str);

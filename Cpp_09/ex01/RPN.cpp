@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 14:14:00 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/08/07 17:09:49 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/08/13 13:13:05 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,39 +16,64 @@
 void ft_r_p_n(char *str)
 {
     
-    std::stack<long long int> pile;
+    std::stack<int> pile;
     std::stringstream ss(str);
     std::string cara;
+    int nmb;
     while (ss >> cara)
     {
         if(cara.size() != 1)
         {
-           // std::cout << 
+            std::cout << "Error: Bad input" << std::endl;
             return ;
         }
         if(cara[0] != '+' && cara[0] != '-' && cara[0] != '/' && cara[0] != '*' && !isdigit(cara[0]))
         {
-           // std::cout << 
+            std::cout << "Error: Bad input :: ALPHANUMERIC PROBLEM" << std::endl;
             return ;
         }
         if(isdigit(cara[0]))
-            pile.push(cara[0]);
-        else if(cara[0] == '+' && cara[0] == '-' && cara[0] == '/' && cara[0] == '*')
+        {
+            nmb = atoi(cara.c_str());
+            pile.push(nmb);
+        }
+        else if(cara[0] == '+' || cara[0] == '-' || cara[0] == '/' || cara[0] == '*')
         {
             if(pile.size() < 2)
+            {
+                std::cout << "Error: Bad input :: CAN'T OPERATE" << std::endl;
                 return ;
-            
-            long long int b = pile.top();
-            pile.pop();
-            long long int a = pile.top();
-            pile.pop();
-            
-            
+            }
+            if (pile.size() >= 2)
+            {
+                int b = pile.top();
+                pile.pop();
+                int a = pile.top();
+                pile.pop();
+                if (cara[0] == '+')
+                    pile.push(a + b);
+                if (cara[0] == '-')
+                    pile.push(a - b);
+                if (cara[0] == '*')
+                    pile.push(a * b);
+                if (cara[0] == '/')
+                {
+                    if (b == 0)
+                    {
+                        std::cout << "Error: Bad input :: CANT'T BE /0" << std::endl;
+                        return ;
+                    }
+                    pile.push(a / b);
+                }
+            }
         }
-        
-        std::cout << "'" + cara + "'" << std::endl;
     }
-    //check si la taille de notre stack est egale a 1 ou non
-    //ft_innit_container(str);
+    if (pile.size() != 1)
+    {
+        std::cout << "Error: Bad input :: SIZE AT THE END" << std::endl;
+        return ;
+    }
+    std::cout << pile.top() << std::endl;
+    return ;
 }
-
+//   5 5 + 7 + 9 + 2 8 - *
