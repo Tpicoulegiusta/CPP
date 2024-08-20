@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 13:50:50 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/08/06 17:02:53 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/08/20 16:04:14 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,8 @@ void BitcoinExchange::init_container(std::string csv)
 float BitcoinExchange::wallet_v(std::string date)
 {
     std::map<std::string, float>::iterator it = this->_container.lower_bound(date);
+    std::cout << date << std::endl;
+    
     if(date != it->first && it != this->_container.begin())
         it--;
     if (it == this->_container.end())
