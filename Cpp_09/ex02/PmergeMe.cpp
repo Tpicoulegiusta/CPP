@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 13:37:35 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/08/20 17:00:18 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/08/22 10:02:57 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,10 +200,10 @@ void ft_min_to_max_deque(std::deque<int> &smax, std::deque<int> &smin)
 
 void sort_value_deq(std::deque<int> &deqVersion)
 {
-    for(size_t i = 0; i != deqVersion.size(); i++)
-    {
-        std::cout << deqVersion[i] << std::endl;
-    }
+    // for(size_t i = 0; i != deqVersion.size(); i++)
+    // {
+    //     std::cout << deqVersion[i] << std::endl;
+    // }
     std::deque<int> smax;
     std::deque<int> smin;
     if(deqVersion.size() % 2 != 0)//on gere le cas d'une suite impair//
@@ -280,5 +280,5 @@ void check_convert_sort_print(int argc, char **argv)
 	std::cout << "Time to process a range of " << nb.size()
 			<< " elements with a vector: " << vecTime << " us" << std::endl;
     std::cout << "Time to process a range of " << nb.size()
-			<< " elements with a vector: " << deqTime << " us" << std::endl; 
+			<< " elements with a vector: " << deqTime << " us" << std::endl;
 }
