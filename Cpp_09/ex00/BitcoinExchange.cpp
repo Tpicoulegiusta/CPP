@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 13:50:50 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/08/20 16:04:14 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/08/30 18:29:05 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,27 +48,32 @@ float BitcoinExchange::ft_stof(std::string str)
 
 bool BitcoinExchange::parse_date(std::string date, std::string line_txt)
 {
-    int years = atoi(date.substr(0, 4).c_str());
-    int months = atoi(date.substr(5, 2).c_str());
-    int days = atoi(date.substr(8, 2).c_str());
-	int	days_of_months[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-
     if (!(date.length() == 10 + 1)) // 11 pour les moins malins -_-'//
     {
         std::cout << "Bad Format ====> " << line_txt << std::endl;
         return (1);
     }
+    int years = atoi(date.substr(0, 4).c_str());
+    int months = atoi(date.substr(5, 2).c_str());
+    int days = atoi(date.substr(8, 2).c_str());
+	int	days_of_months[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
     if(date[4] != '-' || date[7] != '-' || date[10] != ' ')
     {
         std::cout << "Bad Format ====> " << line_txt << std::endl;
         return (1);
     }
-    if(2008 < years && years > 2024)
+    if(2008 > years || years > 2024)
     {
         std::cout << "Bad Format ====> " << line_txt << std::endl;
         return (1);
     }
-    if (1 < months && months > 12)
+    if (1 > months || months > 12)
+    {
+        std::cout << "Bad Format ====> " << line_txt << std::endl;
+        return (1);
+    }
+    if (months == 0)
     {
         std::cout << "Bad Format ====> " << line_txt << std::endl;
         return (1);
@@ -102,23 +107,28 @@ bool BitcoinExchange::parse_value(std::string value, std::string line_txt)
     int dot = 0;
     if(value.empty())
     {
-        std::cerr << "Eroor: bad input value => " << line_txt << std::endl;
+        std::cerr << "Error: bad input value => " << line_txt << std::endl;
         return (1);
     }
-    for(size_t i = 1; i < value.length(); i++)
+    if(atoi(value.c_str()) > 1000)
+    {
+        std::cerr << "Error: more than what => " << line_txt << std::endl;
+        return (1); 
+    }
+    for(size_t i = (value[0] == ' ' ? 1 : 0); i < value.length(); i++)
     {
         if(value[i] == '.')
         {
             dot++;
             if(dot > 1)
             {
-                std::cerr << "Eroor: bad input value => " << line_txt << std::endl;
+                std::cerr << "Error: bad input value => " << line_txt << std::endl;
                 return (1);
             }
         }
         else if(!isdigit(value[i]))
         {
-            std::cerr << "Eroor: bad input value => " << line_txt << std::endl;
+            std::cerr << "Error: bad input value => " << line_txt << std::endl;
             return (1);
         }
     }
@@ -157,8 +167,7 @@ void BitcoinExchange::init_container(std::string csv)
 float BitcoinExchange::wallet_v(std::string date)
 {
     std::map<std::string, float>::iterator it = this->_container.lower_bound(date);
-    std::cout << date << std::endl;
-    
+    //std::cout << date << std::endl;
     if(date != it->first && it != this->_container.begin())
         it--;
     if (it == this->_container.end())

@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 13:37:35 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/08/22 10:02:57 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/08/30 18:16:27 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void check_args(int argc, char **argv)
     //check si les args sont bons ex:: int max, isdigit...//
     if(argc <= 2)
     {
-        std::cout << "Error:: ARGS PROBLEM" << std::endl;
-        return;
+        std::cerr << "Error:: ARGS PROBLEM" << std::endl;
+        exit(0);
     }
     for(int i = 1; argv[i]; i++)
     {
@@ -30,14 +30,14 @@ void check_args(int argc, char **argv)
         {
             if(!isdigit(argv[i][j]))
             {
-                std::cout << "Error:: ARGS PROBLEM" << std::endl;
-                return;
+                std::cerr << "Error:: ARGS PROBLEM" << std::endl;
+                exit(0);
             }
         }
         if((atoi(argv[i]) > INT_MAX) && (atoi(argv[i]) < 0))
         {
-            std::cout << "Error:: INT MAX PROBLEM" << std::endl;
-            return;
+            std::cerr << "Error:: INT MAX PROBLEM" << std::endl;
+            exit(0);
         }
     }
 }
@@ -259,7 +259,7 @@ void check_convert_sort_print(int argc, char **argv)
     for(size_t i = 0; i < nb.size(); i++)
         j++;
     if(j <= 1)
-        return ;
+        return ;//maybe exit//
     std::cout << "Before: ";
     for(unsigned long i = 0; i < nb.size(); i++)
     {
@@ -273,12 +273,17 @@ void check_convert_sort_print(int argc, char **argv)
     std::clock_t start_deq = std::clock();
     sort_value_deq(deqVersion);
 	std::clock_t end_deq = std::clock();
-    
+
     double vecTime = static_cast<double>(end_vec - start_vec) / CLOCKS_PER_SEC * 1000.0;
     double deqTime = static_cast<double>(end_deq - start_deq) / CLOCKS_PER_SEC * 1000.0;
 
+    if(*(nb.end() - 1) < 0)
+    {
+        nb.pop_back();
+    }
+    
 	std::cout << "Time to process a range of " << nb.size()
 			<< " elements with a vector: " << vecTime << " us" << std::endl;
     std::cout << "Time to process a range of " << nb.size()
-			<< " elements with a vector: " << deqTime << " us" << std::endl;
+			<< " elements with a deque: " << deqTime << " us" << std::endl;
 }
