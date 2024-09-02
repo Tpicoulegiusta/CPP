@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 13:37:35 by tpicoule          #+#    #+#             */
-/*   Updated: 2024/08/30 18:16:27 by tpicoule         ###   ########.fr       */
+/*   Updated: 2024/09/02 17:09:37 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void check_args(int argc, char **argv)
                 exit(0);
             }
         }
-        if((atoi(argv[i]) > INT_MAX) && (atoi(argv[i]) < 0))
+        if((atol(argv[i]) > INT_MAX) || (atol(argv[i]) < 0))
         {
             std::cerr << "Error:: INT MAX PROBLEM" << std::endl;
             exit(0);
@@ -71,11 +71,6 @@ void ft_recursive(std::vector<int> &smax, int n)
 void ft_min_to_minmax(std::vector<int> &smax, std::vector<int> &smin)
 {
     int k = 0;
-    for(size_t i = 0; i < smin.size(); i++)
-    {
-        if(smin[i] < 0)
-            smin.pop_back();
-    }
     int j = smin[0];
     for(size_t i = 0; i < smin.size(); i++)
     {
@@ -87,6 +82,11 @@ void ft_min_to_minmax(std::vector<int> &smax, std::vector<int> &smin)
     }
     smax.insert(smax.begin(), j);
     smin.erase(smin.begin() + k);
+    for(size_t i = 0; i < smax.size(); i++)
+    {
+        if(smax[i] < 0)
+            smax.erase(smax.begin());
+    }
 }
 
 void ft_min_to_max(std::vector<int> &smax, std::vector<int> &smin)
@@ -167,11 +167,6 @@ void ft_recursive_deque(std::deque<int> &smax, int n)
 void ft_min_to_minmax_deque(std::deque<int> &smax, std::deque<int> &smin)
 {
     int k = 0;
-    for(size_t i = 0; i < smin.size(); i++)
-    {
-        if(smin[i] < 0)
-            smin.pop_back();
-    }
     int j = smin[0];
     for(size_t i = 0; i < smin.size(); i++)
     {
@@ -183,6 +178,11 @@ void ft_min_to_minmax_deque(std::deque<int> &smax, std::deque<int> &smin)
     }
     smax.insert(smax.begin(), j);
     smin.erase(smin.begin() + k);
+    for(size_t i = 0; i < smax.size(); i++)
+    {
+        if(smax[i] < 0)
+            smax.erase(smax.begin());
+    }
 }
 
 
@@ -287,3 +287,5 @@ void check_convert_sort_print(int argc, char **argv)
     std::cout << "Time to process a range of " << nb.size()
 			<< " elements with a deque: " << deqTime << " us" << std::endl;
 }
+
+
